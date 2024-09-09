@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const authMiddleware = require('../middleware/authMiddleware');
-const { updateProfileValidationRules, validate } = require('../middleware/validationMiddleware');
+const { updateProfileValidationRules } = require('../middleware/validationMiddleware');
 const User = require('../models/User');
 
 // @route    PUT api/profile
