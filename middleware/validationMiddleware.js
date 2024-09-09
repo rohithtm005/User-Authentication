@@ -26,6 +26,20 @@ const validate = (req, res, next) => {
     next();
 };
 
+const updateProfileValidationRules = () => {
+    return [
+        check('name').not().isEmpty().withMessage('Name is required'),
+        check('email').isEmail().withMessage('Email is invalid'),
+        // Add other validation rules as needed
+    ];
+};
+
+module.exports = {
+    updateProfileValidationRules,
+    // Export other validation rules or functions if necessary
+};
+
+
 module.exports = {
     registerValidationRules,
     loginValidationRules,
