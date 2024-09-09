@@ -17,15 +17,6 @@ const loginValidationRules = () => {
     ];
 };
 
-// Validation rules for updating user profile
-const updateProfileValidationRules = () => {
-    return [
-        check('name', 'Name is required').not().isEmpty(),
-        check('email', 'Please include a valid email').isEmail(),
-        // Add other validation rules for profile update as needed
-    ];
-};
-
 // Middleware to handle validation results
 const validate = (req, res, next) => {
     const errors = validationResult(req);
@@ -38,6 +29,5 @@ const validate = (req, res, next) => {
 module.exports = {
     registerValidationRules,
     loginValidationRules,
-    updateProfileValidationRules,  // Add this line
     validate,
 };
